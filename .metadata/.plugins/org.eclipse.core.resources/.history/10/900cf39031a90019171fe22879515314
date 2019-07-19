@@ -1,0 +1,34 @@
+package com.test.dao;
+
+import java.util.List;
+
+import com.test.model.Faculty;
+
+public class FacultyDAOImpl implements FacultyDAOInt {
+
+	public boolean addFaculty(Faculty fac) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public List<Faculty> getAllFaculties() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Faculty getFacultyById(String facid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean deleteFaculty(String facid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean updateFaculty(Faculty fac) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

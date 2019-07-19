@@ -1,0 +1,122 @@
+package com.test.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.test.model.Skill;
+import com.test.model.Xmap_Fac_Skill;
+
+@Repository
+public class Xmap_Fac_Skill_DAOImpl implements XmapFacSkillDAOInt {
+
+	@Autowired
+	private SessionFactory sf;
+	
+	public boolean addXfs(Xmap_Fac_Skill xfs) {
+		try {
+			xfs.setXmapid(generateXfsId());
+			xfs.setXmapavailable(true);
+			Session s = sf.openSession();
+			s.beginTransaction();
+			s.save(xfs);
+			s.getTransaction().commit();
+			s.close();
+			return true;
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
+
+	public List<Xmap_Fac_Skill> getAllXfs() {
+		List<Xmap_Fac_Skill> xfss = null;
+		Session s = sf.openSession();
+		Query q = s.createQuery("from Xmap_Fac_Skill");
+		xfss = q.list();
+		s.close();
+		return xfss;
+	}
+
+	public Xmap_Fac_Skill getXfsById(String xfsid) {
+		Session s = sf.openSession();
+		Xmap_Fac_Skill xfs = null;
+		xfs = s.get(Xmap_Fac_Skill.class, xfsid);
+		s.close();
+		return xfs;
+	}
+
+	public boolean deleteXfs(String xfsid) {
+		Session s = sf.openSession();
+		Xmap_Fac_Skill xfs = null;
+		xfs = s.get(Xmap_Fac_Skill.class, xfsid);
+		if(xfs==null) {
+			s.close();
+			return false;
+		}
+		try {			
+			s.beginTransaction();
+			s.delete(xfs);
+			s.getTransaction().commit();
+			s.close();
+			return true;
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
+
+	public boolean updateXfs(Xmap_Fac_Skill xfs) {
+		try {		
+			Session s = sf.openSession();
+			s.beginTransaction();
+			s.update(xfs);
+			s.getTransaction().commit();
+			s.close();
+			return true;
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
+
+	private String generateXfsId() {
+		String newsxfsid = "";
+		Session ses1 = sf.openSession();
+		Query q = ses1.createQuery("from Xmap_Fac_Skill");
+		List<Xmap_Fac_Skill> data = q.list();
+		if (data.size() == 0) { // table is empty
+			newsxfsid="XFS00001";
+			ses1.close();
+		} 
+		else { // table is not empty
+			Query qr = ses1.createQuery("select max(xmapid) from Xmap_Fac_Skill");
+			List<String> val = qr.list();
+			ses1.close();
+			String existingid = val.get(0);
+			System.out.println(existingid);
+			int id = Integer.parseInt(existingid.substring(3));
+			System.out.println(id);
+			id++;
+			if (id < 10) {
+				newsxfsid = "XFS0000" + id;
+			} else if (id < 100) {
+				newsxfsid = "XFS000" + id;
+			} else if (id < 1000) {
+				newsxfsid = "XFS00" + id;
+			}  else if (id < 10000) {
+				newsxfsid = "XFS0" + id;
+			} else {
+				newsxfsid = "XFS" + id;
+			}
+		}		
+		return newsxfsid;
+	}
+}

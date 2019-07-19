@@ -1,0 +1,9 @@
+create table Skill
+(
+   skillid char(10) primary key,
+   skillname char(30),
+   sillavailable boolean
+)
+
+
+create table Faculty

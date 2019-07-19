@@ -1,0 +1,12 @@
+package com.test.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Vw_Xmap_Fac_Skill {
+	@Id
+	private String xmapid;
+	
+	
+}

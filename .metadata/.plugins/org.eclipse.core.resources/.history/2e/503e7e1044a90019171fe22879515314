@@ -1,0 +1,33 @@
+package com.rest;
+
+import org.junit.runner.RunWith;
+
+@RunWith(SpringRunner.class)
+@SpringJunitConfig(ConfigurationClassName.class)
+public class AppTest {
+
+	@Autowired
+	private FacultyDAOInt facultyDAOInt;
+
+	private Faculty facutly;
+
+	@Before
+	public void setup() {
+		facutly = new Faculty();
+		// setproperties for facutly;
+	}
+
+	@Test
+	public void addFaculty() {
+		assertTrue(facultyDAOInt.addFaculty(facutly));
+		facultyDAOInt.deleteFaculty(facutly.getFactId());
+	}
+
+	@Test
+	public void getFacultyById() {
+		facultyDAOInt.addFaculty(facutly);
+		assertNotNull(facultyDAOInt.getFacultyById(facutly.getFactId()));
+		facultyDAOInt.deleteFaculty(facutly.getFactId());
+	}
+
+}

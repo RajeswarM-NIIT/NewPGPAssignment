@@ -1,0 +1,6 @@
+package com.rest.controller;
+
+@RestController
+public class XmapFacSkillController {
+
+}

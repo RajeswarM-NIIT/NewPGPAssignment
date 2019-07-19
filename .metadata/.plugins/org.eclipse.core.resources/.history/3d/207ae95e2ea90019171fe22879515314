@@ -1,0 +1,12 @@
+package com.test.model;
+
+public class Faculty {
+	private String facultyid;
+	private String facultyname;
+	private boolean facultyavailable;
+}
+
+/*	facultyid char(10)primary key,
+	facultyname char(40),
+	facultyavailable boolean
+*/

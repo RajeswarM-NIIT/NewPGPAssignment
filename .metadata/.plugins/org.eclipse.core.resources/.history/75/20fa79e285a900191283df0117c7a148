@@ -1,0 +1,60 @@
+package com.rest.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rest.service.VwXfsServiceInt;
+import com.test.model.Faculty;
+import com.test.model.Vw_Xmap_Fac_Skill;
+
+@RestController
+public class VwFSController {
+
+	@Autowired
+	private VwXfsServiceInt vwdao;
+	
+	@RequestMapping(value="/getAllViews", method=RequestMethod.GET)
+	public ResponseEntity<?> getAllViews(){
+		System.out.print("\nVwFSController - getAllViews");
+		List<Vw_Xmap_Fac_Skill> vws = vwdao.getAllVwXfs();
+		if(vws.size()>0) {
+			return new ResponseEntity<List<Vw_Xmap_Fac_Skill>>(vws,HttpStatus.OK);	
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("INF","No records found"),HttpStatus.NOT_FOUND);
+		}			
+	}
+	
+	@RequestMapping(value="/getViewByFacultyId", method=RequestMethod.GET)
+	public ResponseEntity<?> getViewById(@RequestParam("facultyid")String facultyid){
+		System.out.print("\nVwFSController - getViewByFacultyId");
+		List<Vw_Xmap_Fac_Skill> vws = vwdao.getMappingByFacultyId(facultyid);
+		if(vws.size()>0) {
+			return new ResponseEntity<List<Vw_Xmap_Fac_Skill>>(vws,HttpStatus.OK);	
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("INF","No records found"),HttpStatus.NOT_FOUND);
+		}			
+	}	
+
+	@RequestMapping(value="/getViewByFacultyName", method=RequestMethod.GET)
+	public ResponseEntity<?> getViewByFacultyName(@RequestParam("facultyname")String facultyname){
+		System.out.print("\nVwFSController - getViewByFacultyName");
+		List<Vw_Xmap_Fac_Skill> vws = vwdao.getMappingByFacultyName(facultyname);
+		if(vws.size()>0) {
+			return new ResponseEntity<List<Vw_Xmap_Fac_Skill>>(vws,HttpStatus.OK);	
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("INF","No records found"),HttpStatus.NOT_FOUND);
+		}			
+	}	
+	
+	
+}

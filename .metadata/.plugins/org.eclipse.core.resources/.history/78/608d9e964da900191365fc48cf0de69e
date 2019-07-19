@@ -1,0 +1,40 @@
+package com.test.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.test.model.Skill;
+
+@Repository
+public class SkillDAOImpl implements SkillDAOInt {
+
+	@Autowired
+	private SessionFactory sf;
+	public boolean addSkill(Skill skill) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public List<Skill> getAllSkills() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Skill getSkillById(String skillid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean deleteSkill(String skillid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean updateSkill(Skill skill) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

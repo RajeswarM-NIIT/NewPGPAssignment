@@ -1,0 +1,52 @@
+package com.test.skillcheck;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+import com.test.configuration.DBConfig;
+import com.test.dao.FacultyDAOInt;
+import com.test.dao.SkillDAOInt;
+import com.test.model.Faculty;
+import com.test.model.Skill;
+
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+@SpringJUnitConfig(DBConfig.class)
+@RunWith(SpringJUnit4ClassRunner.class)
+public class AppTestView {
+
+	@Autowired
+	private VwXfsDAOInt vwdao;
+
+	private Skill skill;
+
+	@Before
+	public void setup() {
+		skill = new Skill("REST API");		
+	}
+
+	@Test
+	public void addSkill() {
+		assertTrue(skillDAOInt.addSkill(skill));
+		skillDAOInt.deleteSkill(skill.getSkillid());
+	}	
+
+	@Test
+	public void geSkillById() {
+		skillDAOInt.addSkill(skill);
+		assertNotNull(skillDAOInt.getSkillById("SKL00001"));
+		skillDAOInt.deleteSkill(skill.getSkillid());
+	}	
+	
+	@Test
+	public void getAllSkills() {
+		assertNotNull(skillDAOInt.getAllSkills());		
+	}
+	
+}

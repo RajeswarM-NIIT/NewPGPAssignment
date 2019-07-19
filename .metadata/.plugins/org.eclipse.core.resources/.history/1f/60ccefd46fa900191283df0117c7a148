@@ -1,0 +1,14 @@
+package com.rest.controller;
+
+public class Message {
+	private String msgtype, msgbody;
+	
+	public Message() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Message(String mt, String mb) {
+		msgtype=mt;
+		msgbody=mb;
+	}
+}

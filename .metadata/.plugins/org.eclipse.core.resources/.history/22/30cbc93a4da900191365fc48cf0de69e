@@ -1,0 +1,15 @@
+package com.test.dao;
+
+import java.util.List;
+
+import com.test.model.Skill;
+
+
+
+public interface SkillDAOInt {
+	public abstract boolean addSkill(Skill skill);
+	public List<Skill> getAllFaculties();
+	public Skill getSkillById(String skillid);
+	public boolean deleteSkill(String skillid);
+	public boolean updateSkill(Skill skill);
+}

@@ -1,0 +1,5 @@
+package com.test.dao;
+
+public interface VwXfsDAOint {
+	public abstract List<Vw_Xmap_Fac_Skill> getAllVwXfs();
+}

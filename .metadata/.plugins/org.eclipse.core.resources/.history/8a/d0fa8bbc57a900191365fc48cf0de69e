@@ -1,0 +1,41 @@
+package com.rest.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.model.Faculty;
+
+@Service
+public class FacultyServiceImpl implements FacultyServiceInt {
+
+	@Autowired
+	private FacultyDAOInt facdao;
+	
+	public boolean addFaculty(Faculty fac) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public List<Faculty> getAllFaculties() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Faculty getFacultyById(String facid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean deleteFaculty(String facid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean updateFaculty(Faculty fac) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

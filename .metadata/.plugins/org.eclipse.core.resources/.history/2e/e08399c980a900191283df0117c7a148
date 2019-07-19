@@ -1,0 +1,48 @@
+package com.rest.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rest.service.XmapFacSkillServiceInt;
+import com.test.model.Faculty;
+import com.test.model.Xmap_Fac_Skill;
+
+@RestController
+public class XmapFacSkillController {
+	@Autowired
+	private XmapFacSkillServiceInt xmapservice;
+	
+	@RequestMapping(value="/getAllXmapFs", method=RequestMethod.GET)
+	public ResponseEntity<?> getAllXmapFacSkill(){
+		System.out.print("\nXmapFacSkillController - getAllXmapFs");
+		List<Xmap_Fac_Skill> xfss = xmapservice.getAllXfs();
+		if(xfss.size()>0) {
+			return new ResponseEntity<List<Xmap_Fac_Skill>>(xfss,HttpStatus.FOUND);	
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("INF","No records found"),HttpStatus.NOT_FOUND);
+		}			
+	}	
+	
+	@RequestMapping(value="/getAllXmapFsById", method=RequestMethod.GET)
+	public ResponseEntity<?> getAllXmapFsById(@RequestParam("xfsid")String xfsid){
+		System.out.print("\nXmapFacSkillController - getAllXmapFsById");
+		Xmap_Fac_Skill xfs = xmapservice.getXfsById(xfsid);
+		if(xfs!=null) {
+			return new ResponseEntity<Xmap_Fac_Skill>(xfs,HttpStatus.FOUND);	
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("INF","No records found"),HttpStatus.NOT_FOUND);
+		}			
+	}
+	
+	
+	
+}

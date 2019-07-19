@@ -1,0 +1,14 @@
+package com.test.dao;
+
+import java.util.List;
+
+import com.test.model.Skill;
+import com.test.model.Xmap_Fac_Skill;
+
+public interface Xmap_Fac_Skill_DAOInt {
+	public abstract boolean addSkill(Xmap_Fac_Skill xfs);
+	public List<Xmap_Fac_Skill> getAllSkills();
+	public Xmap_Fac_Skill getSkillById(String skillid);
+	public boolean deleteSkill(String skillid);
+	public boolean updateSkill(Skill skill);
+}

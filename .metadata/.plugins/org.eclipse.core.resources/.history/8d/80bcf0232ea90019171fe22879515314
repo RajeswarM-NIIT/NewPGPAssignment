@@ -1,0 +1,25 @@
+create table Skill
+(
+   skillid char(10) primary key,
+   skillname char(30),
+   sillavailable boolean
+)
+
+
+create table Faculty
+(
+	facultyid char(10)primary key,
+	facultyname char(40),
+	facultyavailable boolean
+)
+
+
+create table Xmap_Fac_Skill
+(
+	xmapid char(10) primary key,
+	facultyid char(10) references Faculty(facultyid),
+	skillid char(10) references Skill(skillid),
+	xmapavailable boolean
+)
+
+

@@ -1,0 +1,18 @@
+package com.test.model;
+
+public class Faculty {
+	private String skillid;
+	private String skillname;
+	private boolean skillavailable;
+	
+	public Faculty() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}
+/*
+skillid char(10) primary key,
+skillname char(30),
+sillavailable boolean
+*/

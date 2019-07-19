@@ -1,0 +1,6 @@
+package com.test.dao;
+
+public interface FacultyDAOInt {
+	public abstract boolean addFaculty(Faculty fac);
+	public 
+}

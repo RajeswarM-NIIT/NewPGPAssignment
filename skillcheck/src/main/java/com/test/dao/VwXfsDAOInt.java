@@ -1,0 +1,14 @@
+package com.test.dao;
+
+import java.util.List;
+
+import com.test.model.Vw_Xmap_Fac_Skill;
+
+public interface VwXfsDAOInt {
+	public abstract List<Vw_Xmap_Fac_Skill> getAllVwXfs();
+	public abstract List<Vw_Xmap_Fac_Skill> getMappingByFacultyId(String facid);
+	public abstract List<Vw_Xmap_Fac_Skill> getMappingByFacultyName(String facname);
+	public abstract List<Vw_Xmap_Fac_Skill> getMappingByFacultyLocation(String loc);
+	public abstract List<Vw_Xmap_Fac_Skill> getMappingBySkillId(String skillid);
+	public abstract List<Vw_Xmap_Fac_Skill> getMappingBySkillName(String skillname);	
+}

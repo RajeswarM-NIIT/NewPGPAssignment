@@ -1,0 +1,48 @@
+package com.test.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Faculty {
+	@Id
+	private String facultyid;
+	private String facultyname;
+	private boolean facultyavailable;
+	
+	public Faculty() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getFacultyid() {
+		return facultyid;
+	}
+
+	public void setFacultyid(String facultyid) {
+		this.facultyid = facultyid;
+	}
+
+	public String getFacultyname() {
+		return facultyname;
+	}
+
+	public void setFacultyname(String facultyname) {
+		this.facultyname = facultyname;
+	}
+
+	public boolean isFacultyavailable() {
+		return facultyavailable;
+	}
+
+	public void setFacultyavailable(boolean facultyavailable) {
+		this.facultyavailable = facultyavailable;
+	}
+
+	
+}
+
+
+/*	facultyid char(10)primary key,
+	facultyname char(40),
+	facultyavailable boolean
+*/

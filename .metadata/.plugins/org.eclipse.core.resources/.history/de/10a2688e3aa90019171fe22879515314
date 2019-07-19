@@ -1,0 +1,23 @@
+package com.rest.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.test.dao.FacultyDAOInt;
+import com.test.model.Faculty;
+
+@RestController
+public class HomeController {
+	@Autowired
+	private FacultyDAOInt facultydao;
+	
+	@RequestMapping(value="/addFaculty", method=RequestMethod.POST)
+	public ResponseEntity<Faculty> addPerson(@RequestBody Faculty faculty){
+		facultydao.addFaculty(faculty)
+		return new ResponseEntity<Faculty>(faculty,HttpStatus.OK);		
+	}	
+}

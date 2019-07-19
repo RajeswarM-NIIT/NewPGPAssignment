@@ -1,0 +1,45 @@
+package com.rest.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.dao.XmapFacSkillDAOInt;
+import com.test.model.Vw_Xmap_Fac_Skill;
+import com.test.model.Xmap_Fac_Skill;
+
+@Service
+public class XmapFacSkillServiceImpl implements XmapFacSkillServiceInt {
+
+	@Autowired
+	private XmapFacSkillDAOInt xmapdao;
+
+	public boolean addXfs(Xmap_Fac_Skill xfs) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public List<Xmap_Fac_Skill> getAllXfs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Xmap_Fac_Skill getXfsById(String xfsid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean deleteXfs(String xfsid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean updateXfs(Xmap_Fac_Skill xfs) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+
+
+}

@@ -1,0 +1,42 @@
+package com.test.model;
+
+public class Skill {
+	private String skillid;
+	private String skillname;
+	private boolean skillavailable;
+	
+	public Faculty() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getSkillid() {
+		return skillid;
+	}
+
+	public void setSkillid(String skillid) {
+		this.skillid = skillid;
+	}
+
+	public String getSkillname() {
+		return skillname;
+	}
+
+	public void setSkillname(String skillname) {
+		this.skillname = skillname;
+	}
+
+	public boolean isSkillavailable() {
+		return skillavailable;
+	}
+
+	public void setSkillavailable(boolean skillavailable) {
+		this.skillavailable = skillavailable;
+	}
+	
+	
+}
+/*
+skillid char(10) primary key,
+skillname char(30),
+sillavailable boolean
+*/

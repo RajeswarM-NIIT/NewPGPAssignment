@@ -1,0 +1,19 @@
+package com.test.model;
+
+public class Faculty {
+	private String facultyid;
+	private String facultyname;
+	private boolean facultyavailable;
+	
+	public Faculty() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+}
+
+
+/*	facultyid char(10)primary key,
+	facultyname char(40),
+	facultyavailable boolean
+*/

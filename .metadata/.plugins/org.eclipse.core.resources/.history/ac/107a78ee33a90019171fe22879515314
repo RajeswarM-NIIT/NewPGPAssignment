@@ -1,0 +1,10 @@
+package com.test.app;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		 ApplicationContext ctx = new AnnotationConfigApplicationContext(BeanInit.class);
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.test.configuration;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@ComponentScan(basePackages="com.project2dt15")
+@Configuration
+@EnableTransactionManagement
+public class DBConfig {
+
+}

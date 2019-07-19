@@ -1,0 +1,14 @@
+package com.test.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Vw_Xmap_Fac_Skill {
+	@Id
+	private String xmapid;
+	private String facultyid, facultyname, location, skillid, skillname;
+	private boolean facultyavailable, xmapavailable, skillavailable;
+	
+	
+}

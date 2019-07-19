@@ -1,0 +1,41 @@
+package com.rest.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.test.dao.SkillDAOInt;
+import com.test.model.Skill;
+
+@Service
+public class SkillServiceImpl implements SkillServiceInt {
+
+	@Autowired
+	private SkillDAOInt skilldao;
+	
+	public boolean addSkill(Skill skill) {		
+		return skilldao.addSkill(skill);
+	}
+
+	public List<Skill> getAllSkills() {		
+		return skilldao.getAllSkills();
+	}
+
+	public Skill getSkillById(String skillid) {		
+		return skilldao.getSkillById(skillid);
+	}
+
+	public List<Skill> getSkillByName(String skillname) {		
+		return skilldao.getSkillByName(skillname);
+	}
+
+	public boolean deleteSkill(String skillid) {		
+		return skilldao.deleteSkill(skillid) ;
+	}
+
+	public boolean updateSkill(Skill skill) {		
+		return skilldao.updateSkill(skill);
+	}
+
+}

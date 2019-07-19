@@ -1,0 +1,41 @@
+package com.rest;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.test.dao.FacultyDAOInt;
+import com.test.model.Faculty;
+
+@RunWith(SpringRunner.class)
+@SpringJunitConfig(ConfigurationClassName.class)
+public class AppTest {
+
+	@Autowired
+	private FacultyDAOInt facultyDAOInt;
+
+	private Faculty facutly;
+
+	@Before
+	public void setup() {
+		facutly = new Faculty();
+		// setproperties for facutly;
+	}
+
+	@Test
+	public void addFaculty() {
+		assertTrue(facultyDAOInt.addFaculty(facutly));
+		facultyDAOInt.deleteFaculty(facutly.getFacultyid());
+	}
+
+	@Test
+	public void getFacultyById() {
+		facultyDAOInt.addFaculty(facutly);
+		assertNotNull(facultyDAOInt.getFacultyById(facutly.getFacultyid()));
+		facultyDAOInt.deleteFaculty(facutly.getFacultyid());
+	}
+
+}

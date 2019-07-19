@@ -1,0 +1,46 @@
+package com.test.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.test.model.Vw_Xmap_Fac_Skill;
+
+@Repository
+public class VwXfsDAOImpl implements VwXfsDAOint {
+
+	@Autowired
+	private SessionFactory sf;
+	
+	public List<Vw_Xmap_Fac_Skill> getAllVwXfs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Vw_Xmap_Fac_Skill> getMappingByFacultyId(String facid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Vw_Xmap_Fac_Skill> getMappingByFacultyName(String facname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Vw_Xmap_Fac_Skill> getMappingByFacultyLocation(String loc) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Vw_Xmap_Fac_Skill> getMappingBySkillId(String skillid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Vw_Xmap_Fac_Skill> getMappingBySkillName(String skillname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

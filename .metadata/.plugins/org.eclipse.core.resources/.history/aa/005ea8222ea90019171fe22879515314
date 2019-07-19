@@ -1,0 +1,11 @@
+package com.test.model;
+
+public class Faculty {
+	private String skillid;
+	private String skillname;
+	private boolean skillavailable;
+}
+
+skillid char(10) primary key,
+skillname char(30),
+sillavailable boolean

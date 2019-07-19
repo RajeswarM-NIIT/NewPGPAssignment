@@ -1,0 +1,95 @@
+package com.rest.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rest.service.FacultyServiceInt;
+import com.test.dao.FacultyDAOInt;
+import com.test.model.Faculty;
+
+@RestController
+public class SkillController {
+	@Autowired
+	private FacultyServiceInt facultyservice;
+	
+	@RequestMapping(value="/addFaculty", method=RequestMethod.POST)
+	public ResponseEntity<Faculty> addFaculty(@RequestBody Faculty faculty){
+		System.out.print("\nFacultyController - addFaculty");
+		facultyservice.addFaculty(faculty);
+		return new ResponseEntity<Faculty>(faculty,HttpStatus.OK);		
+	}	
+	
+	@RequestMapping(value="/getFaculties", method=RequestMethod.GET)
+	public ResponseEntity<?> getFaculties(){
+		System.out.print("\nFacultyController - getFaculties");
+		List<Faculty> facs = facultyservice.getAllFaculties();
+		if(facs.size()>0) {
+			return new ResponseEntity<List<Faculty>>(facs,HttpStatus.OK);	
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("INF","No records found"),HttpStatus.NOT_FOUND);
+		}
+			
+	}	
+
+	@RequestMapping(value="/getFacultyById", method=RequestMethod.GET)
+	public ResponseEntity<?> getFacultyById(@RequestParam("facid")String fid){
+		System.out.print("\nFacultyController - getFacultyById");
+		Faculty fac = facultyservice.getFacultyById(fid);
+		if(fac!=null) {
+			return new ResponseEntity<Faculty>(fac,HttpStatus.FOUND);
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("INF","Faculty Not Found"),HttpStatus.NOT_FOUND);		
+		}
+	}	
+
+	@RequestMapping(value="/getFacultyByName", method=RequestMethod.GET)
+	public ResponseEntity<?> getFacultyByName(@RequestParam("facname")String fn){
+		System.out.print("\nFacultyController - getFacultyByName");
+		Faculty fac = facultyservice.getFacultyByName(fn);
+		if(fac!=null) {
+			return new ResponseEntity<Faculty>(fac,HttpStatus.FOUND);
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("INF","Faculty Not Found"),HttpStatus.NOT_FOUND);		
+		}	
+	}
+	
+	@RequestMapping(value="/updateFaculty", method=RequestMethod.PUT)
+	public ResponseEntity<Message> updateFaculty(@RequestBody Faculty faculty){
+		System.out.print("\nFacultyController - updateFaculty");
+		boolean result=false;
+		result = facultyservice.updateFaculty(faculty);
+		if(result==true) {
+			return new ResponseEntity<Message>(new Message("INF","Faculty info updated successfully"),HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("ERR","Faculty updation failed"),HttpStatus.OK);
+		}
+				
+	}
+	
+	@RequestMapping(value="/deleteFaculty", method=RequestMethod.DELETE)
+	public ResponseEntity<Message> deleteFaculty(@RequestParam("facid")String fid){
+		System.out.print("\nFacultyController - deleteFaculty");
+		boolean result=false;
+		result = facultyservice.deleteFaculty(fid);
+		if(result==true) {
+			return new ResponseEntity<Message>(new Message("INF","Faculty record deleted successfully"),HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<Message>(new Message("ERR","Faculty deletion failed"),HttpStatus.OK);
+		}
+				
+	}
+	
+}

@@ -1,0 +1,21 @@
+package com.test.model;
+
+public class Xmap_Fac_Skill {
+	private String xmapid;
+	private String facultyid, skillid;
+	private boolean xmapavailable;
+	
+	public Xmap_Fac_Skill() {
+		
+	}
+	
+}
+/*
+create table Xmap_Fac_Skill
+(
+	xmapid char(10) primary key,
+	facultyid char(10) references Faculty(facultyid),
+	skillid char(10) references Skill(skillid),
+	xmapavailable boolean
+)
+*/

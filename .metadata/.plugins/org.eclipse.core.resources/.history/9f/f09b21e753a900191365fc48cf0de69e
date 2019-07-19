@@ -1,0 +1,6 @@
+package com.test.model;
+
+@Entity
+public class Vw_Xmap_Fac_Skill {
+	
+}

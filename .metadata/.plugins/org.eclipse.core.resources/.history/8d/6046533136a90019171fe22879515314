@@ -1,0 +1,21 @@
+package com.test.app;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.test.configuration.DBConfig;
+import com.test.dao.FacultyDAOInt;
+
+public class AppMain {
+
+	
+	
+	public static void main(String[] args) {
+		 ApplicationContext ctx = new AnnotationConfigApplicationContext(DBConfig.class);
+		 FacultyDAOInt facdao = ctx.getBean(FacultyDAOInt.class);
+		 
+
+	}
+
+}

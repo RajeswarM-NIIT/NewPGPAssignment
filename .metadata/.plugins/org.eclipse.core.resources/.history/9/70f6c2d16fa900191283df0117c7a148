@@ -1,0 +1,6 @@
+package com.rest.controller;
+
+public class Message {
+	private String msgtype, msgbody;
+	
+}
