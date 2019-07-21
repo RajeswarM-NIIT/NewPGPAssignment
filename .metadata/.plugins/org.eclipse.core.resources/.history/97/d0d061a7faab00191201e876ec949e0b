@@ -33,7 +33,6 @@ public class XmapFacSkillDAOImpl implements XmapFacSkillDAOInt {
 				return true;
 			}
 			else {
-				System.out.print("\nDuplicated combination");
 				s.close();
 				return false;
 			}			

@@ -48,4 +48,5 @@
     <fullyQualifiedTypeName name="com.test.dao.XmapFacSkillDAOInt"/>
     <fullyQualifiedTypeName name="com.test.model.Xmap_Fac_Skill"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 </qualifiedTypeNameHistroy>

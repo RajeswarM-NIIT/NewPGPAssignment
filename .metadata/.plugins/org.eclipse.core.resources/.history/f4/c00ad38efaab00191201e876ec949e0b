@@ -19,24 +19,14 @@ public class XmapFacSkillDAOImpl implements XmapFacSkillDAOInt {
 	
 	public boolean addXfs(Xmap_Fac_Skill xfs) {
 		try {
+			xfs.setXmapid(generateXfsId());
+			xfs.setXmapavailable(true);
 			Session s = sf.openSession();
-			Query q = s.createQuery("from Xmap_Fac_Skill where facultyid = ? and skillid=?");
-			q.setString(0, xfs.getFacultyid());
-			q.setString(1,  xfs.getSkillid());
-			if( q.list().size()==0) {
-				xfs.setXmapid(generateXfsId());
-				xfs.setXmapavailable(true);				
-				s.beginTransaction();
-				s.save(xfs);
-				s.getTransaction().commit();
-				s.close();
-				return true;
-			}
-			else {
-				System.out.print("\nDuplicated combination");
-				s.close();
-				return false;
-			}			
+			s.beginTransaction();
+			s.save(xfs);
+			s.getTransaction().commit();
+			s.close();
+			return true;
 		}
 		catch(Exception ex) {
 			ex.printStackTrace();

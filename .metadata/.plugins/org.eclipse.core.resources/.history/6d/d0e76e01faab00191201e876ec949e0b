@@ -76,16 +76,15 @@ SELECT * FROM FACULTY where 1=2;
 SELECT * FROM SKILLwhere 1=2;
 SELECT * FROM XMAP_FAC_SKILL where 1=2 ;
 
-
 select f.facultyid, facultyname,location,facultyavailable,x.xmapid,x.xmapavailable, s.skillid, s.skillname, s.skillavailable
 from Faculty f join XMAP_FAC_SKILL x on f.facultyid = x.facultyid
-join SKILL s on x.skillid=s.skillid where facultyavailable=true and skillavailable=true and xmapavailable=true
+join SKILL s on x.skillid=s.skillid
 
 create view Vw_Xmap_Fac_Skill
 as
 select f.facultyid, facultyname,location,facultyavailable,x.xmapid,x.xmapavailable, s.skillid, s.skillname, s.skillavailable
 from Faculty f join XMAP_FAC_SKILL x on f.facultyid = x.facultyid
-join SKILL s on x.skillid=s.skillid where facultyavailable=true and skillavailable=true and xmapavailable=true
+join SKILL s on x.skillid=s.skillid
 
 
 
