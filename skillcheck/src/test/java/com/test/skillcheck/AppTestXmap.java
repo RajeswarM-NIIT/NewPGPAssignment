@@ -1,5 +1,6 @@
 package com.test.skillcheck;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -36,11 +37,13 @@ public class AppTestXmap {
 	}
 
 	@Test
-	public void addXmap() {
+	public void addXmap() {		
 		assertTrue(xmapdao.addXfs(xmap));
 		xmapdao.deleteXfs(xmap.getXmapid());
 	}	
 
+	
+	
 	@Test
 	public void geXmapById() {
 		xmapdao.addXfs(xmap);

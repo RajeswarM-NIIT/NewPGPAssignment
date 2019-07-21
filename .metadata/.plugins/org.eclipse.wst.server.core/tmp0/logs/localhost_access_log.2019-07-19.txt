@@ -1,0 +1,16 @@
+127.0.0.1 - - [19/Jul/2019:16:04:44 +0530] "GET / HTTP/1.1" 404 1069
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:04:45 +0530] "GET /connect/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:05:55 +0530] "GET /connect/getViewBySkillName?skillname=DBMS HTTP/1.1" 200 998
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:26:03 +0530] "POST /connect/addFaculty HTTP/1.1" 200 98
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:26:34 +0530] "GET /connect/getAllFaculties HTTP/1.1" 404 1046
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:27:02 +0530] "GET /connect/getFaculties HTTP/1.1" 200 1129
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:27:20 +0530] "GET /connect/getFacultyById?facid=FAC00011 HTTP/1.1" 302 105
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:27:26 +0530] "GET /connect/getFacultyById?facid=FAC000 HTTP/1.1" 404 58
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:28:17 +0530] "GET /connect/getFacultyByName?facname=Chandra HTTP/1.1" 302 104
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:28:59 +0530] "DELETE /connect/deleteFaculty?facid=FAC00010 HTTP/1.1" 200 76
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:29:05 +0530] "DELETE /connect/deleteFaculty?facid=FAC00010 HTTP/1.1" 200 64
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:30:02 +0530] "POST /connect/addSkill HTTP/1.1" 200 74
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:32:43 +0530] "POST /connect/addXmapFs HTTP/1.1" 200 97
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:33:57 +0530] "GET /connect/getViewByLocation?location=Hyderabad HTTP/1.1" 200 638
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:34:36 +0530] "GET /connect/getViewBySkillName?skillname=DBMS HTTP/1.1" 200 998
+0:0:0:0:0:0:0:1 - - [19/Jul/2019:16:34:52 +0530] "GET /connect/getViewBySkillName?skillname=HTML HTTP/1.1" 200 602

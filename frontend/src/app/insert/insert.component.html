@@ -1,0 +1,12 @@
+
+<div>
+    <input #facultyname onfocus="this.value=''">
+    <br>
+    <input #location onfocus="this.value=''">
+
+<br>
+<button (click)="add(facultyname.value, location.value);">
+    Add
+</button>
+
+</div>

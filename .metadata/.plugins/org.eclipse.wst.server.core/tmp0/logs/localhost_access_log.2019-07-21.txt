@@ -1,0 +1,15 @@
+127.0.0.1 - - [21/Jul/2019:18:38:06 +0530] "GET / HTTP/1.1" 404 1069
+0:0:0:0:0:0:0:1 - - [21/Jul/2019:18:38:08 +0530] "GET /connect/ HTTP/1.1" 200 57
+127.0.0.1 - - [21/Jul/2019:22:49:46 +0530] "GET / HTTP/1.1" 404 1069
+0:0:0:0:0:0:0:1 - - [21/Jul/2019:22:49:47 +0530] "GET /connect/ HTTP/1.1" 200 57
+127.0.0.1 - - [21/Jul/2019:23:10:18 +0530] "OPTIONS /connect/addFaculty HTTP/1.1" 403 20
+127.0.0.1 - - [21/Jul/2019:23:13:00 +0530] "OPTIONS /connect/addFaculty HTTP/1.1" 200 -
+127.0.0.1 - - [21/Jul/2019:23:13:01 +0530] "POST /connect/addFaculty HTTP/1.1" 200 94
+127.0.0.1 - - [21/Jul/2019:23:13:48 +0530] "POST /connect/addFaculty HTTP/1.1" 200 94
+127.0.0.1 - - [21/Jul/2019:23:14:01 +0530] "POST /connect/addFaculty HTTP/1.1" 200 94
+127.0.0.1 - - [21/Jul/2019:23:15:42 +0530] "POST /connect/addFaculty HTTP/1.1" 200 94
+127.0.0.1 - - [21/Jul/2019:23:17:24 +0530] "POST /connect/addFaculty HTTP/1.1" 200 94
+127.0.0.1 - - [21/Jul/2019:23:18:51 +0530] "POST /connect/addFaculty HTTP/1.1" 200 94
+0:0:0:0:0:0:0:1 - - [21/Jul/2019:23:23:27 +0530] "OPTIONS /connect/addFaculty HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [21/Jul/2019:23:23:27 +0530] "POST /connect/addFaculty HTTP/1.1" 200 94
+0:0:0:0:0:0:0:1 - - [21/Jul/2019:23:25:06 +0530] "POST /connect/addFaculty HTTP/1.1" 200 94
